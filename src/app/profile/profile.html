@@ -1,0 +1,38 @@
+<div class="profile-container">
+  <div class="profile-header">
+    <h2>My Profile</h2>
+    <div class="header-actions">
+      <button class="back-btn" (click)="goToDashboard()">Back to Dashboard</button>
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+  </div>
+
+<div class="profile-card">
+  <div class="profile-info">
+    <div class="avatar">
+      {{ email ? email.charAt(0).toUpperCase() : '?' }}
+    </div>
+    <div>
+      <h3>{{ email || 'Loading...' }}</h3>
+      <span class="role-badge">{{ role || 'User' }}</span>
+    </div>
+  </div>
+</div>
+
+  <div class="update-section">
+    <h3>Update Email</h3>
+
+    <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+    <div>
+      <label>New Email</label>
+      <input
+        type="email"
+        [(ngModel)]="newEmail"
+        placeholder="Enter new email"
+      />
+    </div>
+    <button (click)="updateProfile()">Save Changes</button>
+  </div>
+</div>

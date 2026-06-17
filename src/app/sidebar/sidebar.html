@@ -1,0 +1,25 @@
+<div class="sidebar">
+  <div class="sidebar-logo">
+    <h2>MyApp</h2>
+  </div>
+
+  <nav class="sidebar-nav">
+    <ul>
+      <li [class.active]="isActive('/dashboard')" (click)="goToDashboard()">
+        <span class="icon">📋</span>
+        <span>Tasks</span>
+      </li>
+      <li [class.active]="isActive('/profile')" (click)="goToProfile()">
+        <span class="icon">👤</span>
+        <span>Profile</span>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="sidebar-footer">
+    <li (click)="logout()">
+      <span class="icon">🚪</span>
+      <span>Logout</span>
+    </li>
+  </div>
+</div>

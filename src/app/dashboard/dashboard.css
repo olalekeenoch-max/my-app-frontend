@@ -1,0 +1,382 @@
+:host {
+  display: block;
+  background-color: #0f0f0f;
+  min-height: 100vh;
+}
+.dashboard-container {
+  padding: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #e0e0e0;
+}
+
+.add-task {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  background-color: #16213e;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #2a2a4a;
+}
+
+.add-task input, .add-task select {
+  padding: 10px 16px;
+  background-color: #0f0f0f;
+  border: 1px solid #2a2a4a;
+  border-radius: 8px;
+  color: #e0e0e0;
+  font-size: 14px;
+}
+
+.add-task input:focus, .add-task select:focus {
+  outline: none;
+  border-color: #6c63ff;
+}
+
+.add-task input[type="text"] {
+  flex: 1;
+}
+
+.add-task select option {
+  background-color: #16213e;
+}
+
+.add-task button {
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #6c63ff, #5a52d5);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.add-task button:hover {
+  opacity: 0.9;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filters input, .filters select {
+  padding: 10px 16px;
+  background-color: #16213e;
+  border: 1px solid #2a2a4a;
+  border-radius: 8px;
+  color: #e0e0e0;
+  font-size: 14px;
+  flex: 1;
+}
+
+.filters input:focus, .filters select:focus {
+  outline: none;
+  border-color: #6c63ff;
+}
+
+.filters select option {
+  background-color: #16213e;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: #16213e;
+  border-radius: 10px;
+  border: 1px solid #2a2a4a;
+  border-left: 4px solid #2a2a4a;
+  transition: transform 0.2s ease;
+}
+.task-item:hover {
+  transform: translateX(4px);
+}
+
+.task-item.high {
+  border-left-color: #f44336;
+}
+
+.task-item.medium {
+  border-left-color: #ff9800;
+}
+
+.task-item.low {
+  border-left-color: #4CAF50;
+}
+
+.task-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.task-info span {
+  font-size: 16px;
+  color: #e0e0e0;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #555 !important;
+}
+
+.task-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.priority-badge {
+  font-size: 11px;
+  padding: 2px 10px;
+  border-radius: 10px;
+  background-color: #0f0f0f;
+  color: #a0a0b0;
+  border: 1px solid #2a2a4a;
+}
+
+.due-date {
+  font-size: 12px;
+  color: #6c63ff;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.complete-btn {
+  padding: 8px 14px;
+  background-color: transparent;
+  color: #4CAF50;
+  border: 1px solid #4CAF50;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.complete-btn:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.delete-btn {
+  padding: 8px 14px;
+  background-color: transparent;
+  color: #f44336;
+  border: 1px solid #f44336;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.profile-btn {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #6c63ff;
+  border: 1px solid #6c63ff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.profile-btn:hover {
+  background-color: #6c63ff;
+  color: white;
+}
+
+.logout-btn {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #f44336;
+  border: 1px solid #f44336;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+p {
+  color: #a0a0b0;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.add-task {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.add-task input, .add-task select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.add-task input[type="text"] {
+  flex: 1;
+}
+
+.add-task button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filters input, .filters select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  flex: 1;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-left: 4px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+}
+
+.task-item.high {
+  border-left-color: #f44336;
+}
+
+.task-item.medium {
+  border-left-color: #ff9800;
+}
+
+.task-item.low {
+  border-left-color: #4CAF50;
+}
+
+.task-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.task-info span {
+  font-size: 16px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.priority-badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background-color: #eee;
+  color: #333;
+}
+
+.due-date {
+  font-size: 12px;
+  color: #666;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.complete-btn {
+  padding: 6px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  padding: 6px 12px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.profile-btn {
+  padding: 8px 16px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.logout-btn {
+  padding: 8px 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

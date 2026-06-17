@@ -1,0 +1,77 @@
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <h2>My Task Manager</h2>
+    <div class="header-actions">
+      <button class="profile-btn" (click)="goToProfile()">My Profile</button>
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+  </div>
+
+  <!-- Add Task -->
+  <div class="add-task">
+    <input
+      type="text"
+      [(ngModel)]="newTaskTitle"
+      placeholder="Enter a new task..."
+    />
+    <input
+      type="date"
+      [(ngModel)]="newTaskDueDate"
+    />
+    <select [(ngModel)]="newTaskPriority">
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+    </select>
+    <button (click)="addTask()">Add Task</button>
+  </div>
+
+  <!-- Search & Filter -->
+  <div class="filters">
+    <input
+      type="text"
+      [(ngModel)]="searchQuery"
+      (ngModelChange)="applyFilters()"
+      placeholder="Search tasks..."
+    />
+    <select [(ngModel)]="filterPriority" (ngModelChange)="applyFilters()">
+      <option value="">All Priorities</option>
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+    </select>
+    <select [(ngModel)]="filterStatus" (ngModelChange)="applyFilters()">
+      <option value="">All Status</option>
+      <option value="pending">Pending</option>
+      <option value="completed">Completed</option>
+    </select>
+  </div>
+
+  <!-- Task List -->
+  <div class="task-list">
+    <p *ngIf="filteredTasks.length === 0">No tasks found!</p>
+
+    <div class="task-item" *ngFor="let task of filteredTasks"
+      [class.high]="task.priority === 'High'"
+      [class.medium]="task.priority === 'Medium'"
+      [class.low]="task.priority === 'Low'">
+
+      <div class="task-info">
+        <span [class.completed]="task.isCompleted">{{ task.title }}</span>
+        <div class="task-meta">
+          <span class="priority-badge">{{ task.priority }}</span>
+          <span class="due-date" *ngIf="task.dueDate">
+            Due: {{ task.dueDate | date:'mediumDate' }}
+          </span>
+        </div>
+      </div>
+
+      <div class="task-actions">
+        <button class="complete-btn" (click)="toggleTask(task.id)">
+          {{ task.isCompleted ? 'Undo' : 'Complete' }}
+        </button>
+        <button class="delete-btn" (click)="deleteTask(task.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
