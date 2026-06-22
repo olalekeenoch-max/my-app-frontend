@@ -20,7 +20,7 @@ export class LoginComponent {
  onLogin() {
     const body = { email: this.email, password: this.password };
 
-    this.http.post<{ token: string }>('https://localhost:44349/api/auth/login', body)
+    this.http.post<{ token: string }>('https://my-app-backend-kesa.onrender.com/api/auth/login', body)
       .subscribe({
         next: (response) => {
           localStorage.setItem('token', response.token);
