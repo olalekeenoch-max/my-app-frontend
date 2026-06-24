@@ -20,17 +20,17 @@ export class DashboardComponent implements OnInit {
   searchQuery = '';
   filterPriority = '';
   filterStatus = '';
- userId = 0;
+  userId = 0;
 
   constructor(private http: HttpClient, private router: Router) {}
 
-ngOnInit() {
-  this.userId = parseInt(localStorage.getItem('userId') || '1');
-  this.loadTasks();
-}
+  ngOnInit() {
+    this.userId = parseInt(localStorage.getItem('userId') || '1');
+    this.loadTasks();
+  }
 
   loadTasks() {
-    this.http.get<any[]>(`https://localhost:44349/api/task/${this.userId}`)
+    this.http.get<any[]>(`https://my-app-backend-kesa.onrender.com/api/task/${this.userId}`)
       .subscribe({
         next: (tasks) => {
           this.tasks = tasks;
@@ -51,7 +51,7 @@ ngOnInit() {
       priority: this.newTaskPriority
     };
 
-    this.http.post('https://localhost:44349/api/task', task)
+    this.http.post('https://my-app-backend-kesa.onrender.com/api/task', task)
       .subscribe({
         next: () => {
           this.newTaskTitle = '';
@@ -64,7 +64,7 @@ ngOnInit() {
   }
 
   toggleTask(id: number) {
-    this.http.put(`https://localhost:44349/api/task/${id}`, {})
+    this.http.put(`https://my-app-backend-kesa.onrender.com/api/task/${id}`, {})
       .subscribe({
         next: () => this.loadTasks(),
         error: (err) => console.log('Error updating task', err)
@@ -72,7 +72,7 @@ ngOnInit() {
   }
 
   deleteTask(id: number) {
-    this.http.delete(`https://localhost:44349/api/task/${id}`)
+    this.http.delete(`https://my-app-backend-kesa.onrender.com/api/task/${id}`)
       .subscribe({
         next: () => this.loadTasks(),
         error: (err) => console.log('Error deleting task', err)
