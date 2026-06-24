@@ -27,7 +27,7 @@ export class RegisterComponent {
 
     const body = { email: this.email, password: this.password };
 
-    this.http.post('https://localhost:44349/api/auth/register', body, { responseType: 'text' })
+    this.http.post('https://my-app-backend-kesa.onrender.com/api/auth/register', body, { responseType: 'text' })
       .subscribe({
         next: () => {
           alert('Registration successful! Please login.');
