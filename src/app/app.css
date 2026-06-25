@@ -11,6 +11,7 @@
 .main-content.with-sidebar {
   margin-left: 240px;
 }
+
 @media (max-width: 768px) {
   .app-layout {
     flex-direction: column;
