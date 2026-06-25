@@ -1,3 +1,4 @@
+/* DESKTOP */
 .sidebar {
   width: 240px;
   height: 100vh;
@@ -8,6 +9,10 @@
   left: 0;
   top: 0;
   border-right: 1px solid #2a2a4a;
+}
+
+.sidebar-top {
+  display: none;
 }
 
 .sidebar-logo {
@@ -76,4 +81,66 @@
 .sidebar-footer li:hover {
   background-color: #16213e;
   color: #f44336;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: column;
+    border-right: none;
+    border-bottom: 1px solid #2a2a4a;
+  }
+
+  .sidebar-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+  }
+
+  .sidebar-top h2 {
+    color: #6c63ff;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .sidebar-nav-horizontal {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .sidebar-nav-horizontal span {
+    color: #a0a0b0;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+
+  .sidebar-nav-horizontal span:hover {
+    background-color: #16213e;
+    color: #e0e0e0;
+  }
+
+  .sidebar-nav-horizontal span.active {
+    color: #6c63ff;
+    background-color: #16213e;
+  }
+
+  .sidebar-logo {
+    display: none;
+  }
+
+  .sidebar-nav {
+    display: none;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
 }
