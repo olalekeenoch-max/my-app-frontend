@@ -175,4 +175,31 @@ input:focus {
   border-radius: 8px;
   margin-bottom: 20px;
   font-size: 14px;
+}@media (max-width: 768px) {
+  .profile-container {
+    padding: 15px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .profile-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 32px;
+  }
 }
